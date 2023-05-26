@@ -21,6 +21,7 @@ class _StateFulWidgetState extends State<StateFulWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Text(DateTime.now().toString()),
           Container(
             child: Center(
                 child: Text(count.toString(),
@@ -30,7 +31,11 @@ class _StateFulWidgetState extends State<StateFulWidget> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
+          count++;
+          print(count);
+          setState(() {
 
+          });
         },
         child: Icon(Icons.add),
       ),
