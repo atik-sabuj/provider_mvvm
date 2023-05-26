@@ -10,6 +10,18 @@ class StateFulWidget extends StatefulWidget {
 class _StateFulWidgetState extends State<StateFulWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Column(
+        children: [
+
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+
+        },
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }
