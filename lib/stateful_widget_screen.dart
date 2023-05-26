@@ -8,12 +8,24 @@ class StateFulWidget extends StatefulWidget {
 }
 
 class _StateFulWidgetState extends State<StateFulWidget> {
+
+  int count = 0;
   @override
   Widget build(BuildContext context) {
+    print('build');
     return Scaffold(
+      appBar: AppBar(
+        title: Text('StateFul Widget'),
+      ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
+          Container(
+            child: Center(
+                child: Text(count.toString(),
+                  style: TextStyle(fontSize: 50,),)),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
