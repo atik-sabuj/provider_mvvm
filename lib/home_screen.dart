@@ -5,6 +5,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    print('build');
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Provider Basic'),
+      ),
+      body: Column(
+        children: [
+
+        ],
+      ),
+    );
   }
 }
