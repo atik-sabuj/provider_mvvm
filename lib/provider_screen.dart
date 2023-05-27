@@ -8,8 +8,26 @@ class ProviderScreen extends StatefulWidget {
 }
 
 class _ProviderScreenState extends State<ProviderScreen> {
+
+  int count = 0;
   @override
   Widget build(BuildContext context) {
-    return Container();
+    print('build');
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Provider Screen'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(count.toString(),
+              style: TextStyle(fontSize: 50),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
