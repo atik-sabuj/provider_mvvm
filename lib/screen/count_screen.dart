@@ -12,16 +12,22 @@ class CountExample extends StatefulWidget {
 class _CountExampleState extends State<CountExample> {
   @override
   Widget build(BuildContext context) {
-    final countProvider = Provider.of<CountProvider>(context);
+    final countProvider = Provider.of<CountProvider>(context, listen: false);
+    print('build');
     return Scaffold(
       appBar: AppBar(
         title: Text('Counting Screen'),
       ),
       body: Center(
-        child: Text(countProvider.count.toString(),
-        style: TextStyle(fontSize: 50),),
+        child: Consumer<CountProvider>(builder: (context, value, child){
+          return Text(value.count.toString(),
+            style: TextStyle(fontSize: 50),);
+        }),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {  },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          countProvider.setCount();
+        },
         child: Icon(Icons.add),
 
       ),
