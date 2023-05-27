@@ -18,16 +18,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return ChangeNotifierProvider(
-        create: (_) => CountProvider (),
-    );
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+        create: (_) => CountProvider(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+          primarySwatch: Colors.blue,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const CountExample(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const CountExample(),
     );
   }
 }
