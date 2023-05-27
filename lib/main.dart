@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider_mvvm/home_screen.dart';
 import 'package:provider_mvvm/provider_screen.dart';
+import 'package:provider_mvvm/screen/count_screen.dart';
 import 'package:provider_mvvm/stateful_widget_screen.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ProviderScreen(),
+      home: const CountExample(),
     );
   }
 }
