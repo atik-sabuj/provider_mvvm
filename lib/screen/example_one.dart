@@ -15,24 +15,45 @@ class _ExampleOneScreenState extends State<ExampleOneScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Example One Screen'),
+        title: const Text('Example One Screen'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Slider(value: value, onChanged: (value){
+          Slider(
+              min: 0,
+              max: 1,
+              value: value, onChanged: (val){
+                print(value);
+                value = val;
+            setState(() {
 
+            });
           }),
           Row(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.green
+              Expanded(
+                child: Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.green.withOpacity(value)
+                  ),
+                  child: const Center(
+                    child: Text('Container 1'),
+                  ),
                 ),
-                child: Center(
-                  child: Text('Container 1'),
+              ),
+              Expanded(
+                child: Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.red.withOpacity(value)
+                  ),
+                  child: const Center(
+                    child: Text('Container 2'),
+                  ),
                 ),
-              )
+              ),
             ],
           )
         ],
