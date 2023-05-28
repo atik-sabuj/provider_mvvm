@@ -18,7 +18,7 @@ class _CountExampleState extends State<CountExample> {
     // TODO: implement initState
     super.initState();
     final countProvider = Provider.of<CountProvider>(context, listen: false);
-    Timer.periodic(Duration(seconds: 0), (timer) {
+    Timer.periodic(Duration(seconds: 2), (timer) {
       countProvider.setCount();
     });
   }
