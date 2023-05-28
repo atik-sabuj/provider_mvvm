@@ -4,6 +4,7 @@ import 'package:provider_mvvm/home_screen.dart';
 import 'package:provider_mvvm/provider/count_provider.dart';
 import 'package:provider_mvvm/provider_screen.dart';
 import 'package:provider_mvvm/screen/count_screen.dart';
+import 'package:provider_mvvm/screen/example_one.dart';
 import 'package:provider_mvvm/stateful_widget_screen.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: const CountExample(),
+        home: const ExampleOneScreen(),
       ),
     );
   }
