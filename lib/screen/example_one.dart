@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_mvvm/provider/example_one_provider.dart';
 
 class ExampleOneScreen extends StatefulWidget {
   const ExampleOneScreen({Key? key}) : super(key: key);
@@ -9,10 +11,11 @@ class ExampleOneScreen extends StatefulWidget {
 
 class _ExampleOneScreenState extends State<ExampleOneScreen> {
 
-  double value = 1.0;
-
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<ExampleOneProvider>(context, listen: true);
+
+    print('build');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Example One Screen'),
@@ -23,12 +26,8 @@ class _ExampleOneScreenState extends State<ExampleOneScreen> {
           Slider(
               min: 0,
               max: 1,
-              value: value, onChanged: (val){
-                print(value);
-                value = val;
-            setState(() {
-
-            });
+              value: provider.value, onChanged: (val){
+                provider.setValue(val);
           }),
           Row(
             children: [
@@ -36,7 +35,7 @@ class _ExampleOneScreenState extends State<ExampleOneScreen> {
                 child: Container(
                   height: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green.withOpacity(value)
+                    color: Colors.green.withOpacity(provider.value)
                   ),
                   child: const Center(
                     child: Text('Container 1'),
@@ -47,7 +46,7 @@ class _ExampleOneScreenState extends State<ExampleOneScreen> {
                 child: Container(
                   height: 100,
                   decoration: BoxDecoration(
-                      color: Colors.red.withOpacity(value)
+                      color: Colors.red.withOpacity(provider.value)
                   ),
                   child: const Center(
                     child: Text('Container 2'),
