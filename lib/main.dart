@@ -6,6 +6,7 @@ import 'package:provider_mvvm/provider/example_one_provider.dart';
 import 'package:provider_mvvm/provider_screen.dart';
 import 'package:provider_mvvm/screen/count_screen.dart';
 import 'package:provider_mvvm/screen/example_one.dart';
+import 'package:provider_mvvm/screen/favorite/favorite_screen.dart';
 import 'package:provider_mvvm/stateful_widget_screen.dart';
 
 void main() {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: const ExampleOneScreen(),
+        home: const FavoriteScreen(),
       ),
     );
   }
