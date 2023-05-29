@@ -10,6 +10,22 @@ class FavoriteScreen extends StatefulWidget {
 class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Favorite Screen'),
+      ),
+      body: Column(
+        children: [
+          ListView.builder(
+            itemCount: 100,
+            itemBuilder: (context, index){
+              return ListTile(
+                  title: Text('Item '+index.toString()),
+              );
+            },
+          )
+        ],
+      ),
+    );
   }
 }
