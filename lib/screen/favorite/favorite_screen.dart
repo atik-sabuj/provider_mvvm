@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_mvvm/provider/favorite_provider.dart';
+import 'package:provider_mvvm/screen/favorite/my_favorite.dart';
 
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
@@ -18,7 +19,16 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     print('build');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorite Screen'),
+        title: const Text('Favorite Screen'),
+        actions:  [
+          InkWell(
+            onTap: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyFavoriteItemScreen()));
+            },
+              child: Icon(Icons.favorite)),
+          SizedBox(width: 20,),
+        ],
       ),
       body: Column(
         children: [
