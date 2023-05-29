@@ -15,7 +15,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final favoriteProvider = Provider.of<FavoriteItem>(context);
     print('build');
     return Scaffold(
       appBar: AppBar(
@@ -27,17 +26,16 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
             child: ListView.builder(
               itemCount: 100,
               itemBuilder: (context, index){
-                return ListTile(
-                  onTap: (){
-                    selectedItem.add(index);
-                    setState(() {
-
-                    });
-                  },
+                return Consumer<FavoriteItemProvider>(builder: (context, value, child){
+                  return ListTile(
+                    onTap: (){
+                      value.addItem(index);
+                    },
                     title: Text('Item '+index.toString()),
-                  trailing: Icon(
-                      selectedItem.contains(index) ?Icons.favorite : Icons.favorite_border_outlined),
-                );
+                    trailing: Icon(
+                        value.selectedItem.contains(index) ?Icons.favorite : Icons.favorite_border_outlined),
+                  );
+                });
               },
             ),
           )

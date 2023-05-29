@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class FavoriteItem with ChangeNotifier {
+class FavoriteItemProvider with ChangeNotifier {
 
   List<int> _selectedItem = [];
 
@@ -8,6 +8,7 @@ class FavoriteItem with ChangeNotifier {
 
   void addItem(int value){
     _selectedItem.add(value);
+    notifyListeners();
   }
 
 }

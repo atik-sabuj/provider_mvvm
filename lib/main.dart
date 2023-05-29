@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:provider_mvvm/home_screen.dart';
 import 'package:provider_mvvm/provider/count_provider.dart';
 import 'package:provider_mvvm/provider/example_one_provider.dart';
+import 'package:provider_mvvm/provider/favorite_provider.dart';
 import 'package:provider_mvvm/provider_screen.dart';
 import 'package:provider_mvvm/screen/count_screen.dart';
 import 'package:provider_mvvm/screen/example_one.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (_) => CountProvider()),
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+          ChangeNotifierProvider(create: (_) => FavoriteItemProvider()),
         ],
       child: MaterialApp(
         title: 'Flutter Demo',
