@@ -8,8 +8,12 @@ class FavoriteScreen extends StatefulWidget {
 }
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
+
+  List<int> selectedItem = [];
+
   @override
   Widget build(BuildContext context) {
+    print('build');
     return Scaffold(
       appBar: AppBar(
         title: Text('Favorite Screen'),
@@ -21,8 +25,15 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               itemCount: 100,
               itemBuilder: (context, index){
                 return ListTile(
+                  onTap: (){
+                    selectedItem.add(index);
+                    setState(() {
+
+                    });
+                  },
                     title: Text('Item '+index.toString()),
-                  trailing: Icon(Icons.favorite),
+                  trailing: Icon(
+                      selectedItem.contains(index) ?Icons.favorite : Icons.favorite_border_outlined),
                 );
               },
             ),
