@@ -16,13 +16,16 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       ),
       body: Column(
         children: [
-          ListView.builder(
-            itemCount: 100,
-            itemBuilder: (context, index){
-              return ListTile(
-                  title: Text('Item '+index.toString()),
-              );
-            },
+          Expanded(
+            child: ListView.builder(
+              itemCount: 100,
+              itemBuilder: (context, index){
+                return ListTile(
+                    title: Text('Item '+index.toString()),
+                  trailing: Icon(Icons.favorite),
+                );
+              },
+            ),
           )
         ],
       ),
