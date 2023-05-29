@@ -29,6 +29,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 return Consumer<FavoriteItemProvider>(builder: (context, value, child){
                   return ListTile(
                     onTap: (){
+
+                      if(value.selectedItem.contains(index)){
+                        value.removeItem(index);
+
+                      }else {
+                        value.addItem(index);
+                      }
                       value.addItem(index);
                     },
                     title: Text('Item '+index.toString()),
