@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-   // final themeChanger = Provider.of<ThemeChanger>(context);
+
 
     return MultiProvider(
         providers: [
@@ -32,16 +32,21 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ThemeChanger()),
 
         ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        // themeMode: ,
-        theme: ThemeData(
+      child: Builder(
+        builder: (BuildContext context){
+          final themeChanger = Provider.of<ThemeChanger>(context);
 
-          primarySwatch: Colors.blue,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: const DarkThemeScreen(),
-      ),
+        return MaterialApp(
+          title: 'Flutter Demo',
+          themeMode: themeChanger.themeMode,
+          theme: ThemeData(
+
+            primarySwatch: Colors.blue,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: const DarkThemeScreen(),
+        );
+      },),
     );
   }
 }
