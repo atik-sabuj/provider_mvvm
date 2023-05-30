@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           debugShowCheckedModeBanner: false,
-          home: const NotifyListenerScreen(),
+          home:  NotifyListenerScreen(),
         );
       },),
     );
