@@ -4,7 +4,7 @@ class NotifyListenerScreen extends StatelessWidget {
   NotifyListenerScreen({Key? key}) : super(key: key);
 
   ValueNotifier<int> _counter = ValueNotifier<int>(0);
-  ValueNotifier<bool> toggle = ValueNotifier<bool>(true);
+  ValueNotifier<bool> toggle = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +15,22 @@ class NotifyListenerScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TextFormField(
-            enabled: toggle.value,
-            decoration: InputDecoration(
-              hintText: 'Password'
-            ),
-          ),
+          ValueListenableBuilder(
+              valueListenable: toggle,
+              builder: (context, value, child){
+                return TextFormField(
+                    obscureText: toggle.value,
+                    decoration: InputDecoration(
+                        hintText: 'Password',
+                        suffix: InkWell(
+                            onTap: (){
+                              toggle.value = !toggle.value;
+                            },
+                            child: Icon(toggle.value? Icons.visibility_off_outlined : Icons.visibility))
+                    )
+                );
+              }),
+
           Center(
             child: ValueListenableBuilder(
                 valueListenable: _counter,
