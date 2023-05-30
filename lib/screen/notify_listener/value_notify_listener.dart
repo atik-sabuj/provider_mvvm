@@ -10,6 +10,10 @@ class NotifyListenerScreen extends StatefulWidget {
 class _NotifyListenerScreenState extends State<NotifyListenerScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Notify Listener Page'),
+      ),
+    );
   }
 }
