@@ -4,6 +4,7 @@ class NotifyListenerScreen extends StatelessWidget {
   NotifyListenerScreen({Key? key}) : super(key: key);
 
   ValueNotifier<int> _counter = ValueNotifier<int>(0);
+  ValueNotifier<bool> toggle = ValueNotifier<bool>(true);
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +13,22 @@ class NotifyListenerScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Notify Listener Page'),
       ),
-      body: Center(
-        child: ValueListenableBuilder(
-            valueListenable: _counter,
-            builder: (context, value, child){
-              return Text(_counter.value.toString(), style: TextStyle(fontSize: 50),);
-            }),
+      body: Column(
+        children: [
+          TextFormField(
+            enabled: toggle.value,
+            decoration: InputDecoration(
+              hintText: 'Password'
+            ),
+          ),
+          Center(
+            child: ValueListenableBuilder(
+                valueListenable: _counter,
+                builder: (context, value, child){
+                  return Text(_counter.value.toString(), style: TextStyle(fontSize: 50),);
+                }),
+          ),
+        ],
       ),
 
       floatingActionButton: FloatingActionButton(
