@@ -16,7 +16,7 @@ class _DarkThemeScreenState extends State<DarkThemeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dark Theme Page'),
+        title: const Text('Phone Themes Changer'),
       ),
       body: Column(
         children: [
@@ -40,6 +40,8 @@ class _DarkThemeScreenState extends State<DarkThemeScreen> {
               groupValue: themeChanger.themeMode,
               onChanged: themeChanger.setTheme
           ),
+
+          Icon(Icons.favorite)
         ],
       ),
     );

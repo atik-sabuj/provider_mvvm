@@ -40,8 +40,20 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           themeMode: themeChanger.themeMode,
           theme: ThemeData(
+            brightness: Brightness.light,
+            primarySwatch: Colors.red,
+          ),
+          darkTheme: ThemeData(
+            brightness: Brightness.dark,
+            primarySwatch: Colors.yellow,
+            primaryColor: Colors.purple,
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.teal,
+            ),
 
-            primarySwatch: Colors.blue,
+            iconTheme: IconThemeData(
+              color: Colors.pink
+            ),
           ),
           debugShowCheckedModeBanner: false,
           home: const DarkThemeScreen(),
