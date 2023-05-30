@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+   // final themeChanger = Provider.of<ThemeChanger>(context);
 
     return MultiProvider(
         providers: [
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         ],
       child: MaterialApp(
         title: 'Flutter Demo',
+        // themeMode: ,
         theme: ThemeData(
 
           primarySwatch: Colors.blue,

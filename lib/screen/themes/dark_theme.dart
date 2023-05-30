@@ -10,6 +10,15 @@ class DarkThemeScreen extends StatefulWidget {
 class _DarkThemeScreenState extends State<DarkThemeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Dark Theme Page'),
+      ),
+      body: Column(
+        children: [
+
+        ],
+      ),
+    );
   }
 }
