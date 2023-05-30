@@ -9,6 +9,7 @@ import 'package:provider_mvvm/provider_screen.dart';
 import 'package:provider_mvvm/screen/count_screen.dart';
 import 'package:provider_mvvm/screen/example_one.dart';
 import 'package:provider_mvvm/screen/favorite/favorite_screen.dart';
+import 'package:provider_mvvm/screen/notify_listener/value_notify_listener.dart';
 import 'package:provider_mvvm/screen/themes/dark_theme.dart';
 import 'package:provider_mvvm/stateful_widget_screen.dart';
 
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           debugShowCheckedModeBanner: false,
-          home: const DarkThemeScreen(),
+          home: const NotifyListenerScreen(),
         );
       },),
     );
