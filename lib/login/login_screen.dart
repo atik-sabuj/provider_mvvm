@@ -25,10 +25,20 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextFormField(
+              controller: emailController,
               decoration: InputDecoration(
                 hintText: 'Email',
               ),
-            )
+            ),
+
+        const SizedBox(height: 20,),
+
+        TextFormField(
+          controller: passwordController,
+          decoration: InputDecoration(
+            hintText: 'Password',
+          ),
+        )
           ],
         ),
       ),
