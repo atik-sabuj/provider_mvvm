@@ -38,7 +38,18 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             hintText: 'Password',
           ),
-        )
+        ),
+            const SizedBox(height: 20,),
+            Container(
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.deepOrange,
+                borderRadius: BorderRadius.circular(10)
+              ),
+              child: Center(
+                child: Text('Log In'),
+              ),
+            )
           ],
         ),
       ),
