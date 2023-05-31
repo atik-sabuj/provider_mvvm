@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_mvvm/home_screen.dart';
 import 'package:provider_mvvm/login/login_screen.dart';
+import 'package:provider_mvvm/provider/auth_provider.dart';
 import 'package:provider_mvvm/provider/count_provider.dart';
 import 'package:provider_mvvm/provider/example_one_provider.dart';
 import 'package:provider_mvvm/provider/favorite_provider.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
           ChangeNotifierProvider(create: (_) => FavoriteItemProvider()),
           ChangeNotifierProvider(create: (_) => ThemeChanger()),
+          ChangeNotifierProvider(create: (_) => AuthProvider()),
 
         ],
       child: Builder(
