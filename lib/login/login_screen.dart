@@ -39,11 +39,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
         TextFormField(
           controller: passwordController,
+          obscureText: true,
           decoration: InputDecoration(
             hintText: 'Password',
           ),
         ),
-            const SizedBox(height: 20,),
+            const SizedBox(height: 50,),
             InkWell(
               onTap: (){
                 authProvider.login(emailController.text.toString(),
@@ -56,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(10)
                 ),
                 child: Center(
-                  child: authProvider.loading ? CircularProgressIndicator(): Text('Log In'),
+                  child: authProvider.loading ? CircularProgressIndicator(color: Colors.white,): Text('Log In'),
                 ),
               ),
             )
