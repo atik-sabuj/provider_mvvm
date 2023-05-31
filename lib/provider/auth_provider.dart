@@ -8,9 +8,12 @@ class AuthProvider with ChangeNotifier {
 
   setLoading(bool value){
     _loading = value;
+    notifyListeners();
   }
 
   void login(String email, String password)async{
+
+    setLoading(true);
 
     try {
 
@@ -23,11 +26,15 @@ class AuthProvider with ChangeNotifier {
 
       if(response.statusCode == 200){
         print('successful');
+        setLoading(false);
+
       }else {
+        setLoading(false);
         print('failed');
       }
       
     }catch(e){
+      setLoading(false);
       print(e.toString());
     }
   }
