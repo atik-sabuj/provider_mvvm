@@ -3,6 +3,13 @@ import 'package:http/http.dart';
 
 class AuthProvider with ChangeNotifier {
 
+  bool _loading = false;
+  bool get loading => _loading;
+
+  setLoading(bool value){
+    _loading = value;
+  }
+
   void login(String email, String password)async{
 
     try {
